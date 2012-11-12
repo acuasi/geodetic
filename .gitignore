@@ -1,9 +1,9 @@
 *.class
 
 # Package Files #
-*.jar
 *.war
 *.ear
+*.DS_Store*
 /geodetic/nbproject/private/
 /geodetic/build/
-/geodetic/dist/
+

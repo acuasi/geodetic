@@ -152,7 +152,7 @@ public class geodeticGUI extends javax.swing.JFrame {
         myLat2 = (double)(Double.parseDouble(lat2.getText()));
         myLon2 = (double)(Double.parseDouble(lon2.getText()));
         
-        double dLat = Math.toRadians(myLat1 - myLat1);
+        double dLat = Math.toRadians(myLat2 - myLat1);
         double dLon = Math.toRadians(myLon2 - myLon1);
         myLat1 = Math.toRadians(myLat1);
         myLat2 = Math.toRadians(myLat2);
