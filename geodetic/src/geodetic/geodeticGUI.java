@@ -40,7 +40,7 @@ public class geodeticGUI extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("PFRR Geodetic Calculator");
 
-        lat1.setText("jTextField1");
+        lat1.setText("latitude 1");
 
         lat1Label.setText("Lat  1");
 
@@ -53,17 +53,22 @@ public class geodeticGUI extends javax.swing.JFrame {
 
         lon1Label.setText("Lon 1");
 
-        lon1.setText("jTextField2");
+        lon1.setText("longitude 1");
 
         lat2Label.setText("Lat  2");
 
-        lat2.setText("jTextField3");
+        lat2.setText("latitude 2");
 
         lon2Label.setText("Lon 2");
 
-        lon2.setText("jTextField4");
+        lon2.setText("longitude 2");
+        lon2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                lon2ActionPerformed(evt);
+            }
+        });
 
-        distance.setText("jTextField5");
+        distance.setText("distance");
 
         org.jdesktop.layout.GroupLayout layout = new org.jdesktop.layout.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -121,7 +126,7 @@ public class geodeticGUI extends javax.swing.JFrame {
                 .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
                     .add(lon2Label)
                     .add(lon2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 128, Short.MAX_VALUE)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 15, Short.MAX_VALUE)
                 .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
                     .add(calculateButton)
                     .add(distance, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
@@ -132,7 +137,8 @@ public class geodeticGUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void calculateButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_calculateButtonActionPerformed
-        // TODO add your handling code here:
+        // based on the haversine formula
+        // http://rosettacode.org/wiki/Haversine_formula#Java
         double R = 6372.8; // In kilometers
         
         double myLat1;
@@ -158,6 +164,10 @@ public class geodeticGUI extends javax.swing.JFrame {
         
         distance.setText(myDistance + " km");
     }//GEN-LAST:event_calculateButtonActionPerformed
+
+    private void lon2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lon2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lon2ActionPerformed
 
     /**
      * @param args the command line arguments
