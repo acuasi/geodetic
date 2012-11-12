@@ -4,3 +4,6 @@
 *.jar
 *.war
 *.ear
+/geodetic/nbproject/private/
+/geodetic/build/
+/geodetic/dist/
